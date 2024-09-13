@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uk.ac.kcl.inf.fame.projects
+Bundle-ManifestVersion: 2
+Bundle-Name: uk.ac.kcl.inf.fame.projects
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uk.ac.kcl.inf.fame.projects; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: uk.ac.kcl.inf.fame.projects.services,
+ uk.ac.kcl.inf.fame.projects.serializer,
+ uk.ac.kcl.inf.fame.projects.generator,
+ uk.ac.kcl.inf.fame.projects.projectsLang,
+ uk.ac.kcl.inf.fame.projects.projectsLang.util,
+ uk.ac.kcl.inf.fame.projects,
+ uk.ac.kcl.inf.fame.projects.parser.antlr,
+ uk.ac.kcl.inf.fame.projects.projectsLang.impl,
+ uk.ac.kcl.inf.fame.projects.scoping,
+ uk.ac.kcl.inf.fame.projects.parser.antlr.internal,
+ uk.ac.kcl.inf.fame.projects.validation
+Import-Package: org.apache.log4j

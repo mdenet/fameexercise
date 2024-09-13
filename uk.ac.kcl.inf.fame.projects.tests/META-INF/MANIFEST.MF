@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: uk.ac.kcl.inf.fame.projects.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: uk.ac.kcl.inf.fame.projects.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: uk.ac.kcl.inf.fame.projects.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: uk.ac.kcl.inf.fame.projects,
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.35.0"
+Import-Package: org.junit.jupiter.api;version="[5.1.0,6.0.0)",
+ org.junit.jupiter.api.extension;version="[5.1.0,6.0.0)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: uk.ac.kcl.inf.fame.projects.tests;x-internal=true

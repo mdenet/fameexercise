@@ -1,0 +1,22 @@
+grammar uk.ac.kcl.inf.fame.projects.ProjectsLang with org.eclipse.xtext.common.Terminals
+
+generate projectsLang "http://www.ac.uk/kcl/inf/fame/projects/ProjectsLang"
+
+Project:
+	'project' title=STRING 
+	'described' 'as' description=STRING
+	(tasks += Task | people += Person)*
+;
+
+Task:
+	'task' title=STRING 'from' 'month' start=INT 'for' duration=INT 'months'
+	'involves' effort+=Effort ('and' effort+=Effort)*
+;
+
+Person:
+	'person' name=ID
+;
+
+Effort:
+	person=[Person] 'works' 'for' percentage=INT '%'
+;

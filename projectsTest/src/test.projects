@@ -1,0 +1,14 @@
+project "ACME" described as "General project"
+  person Alice
+  person Bob
+  person Charles
+  
+  task "Analysis" from month 1 for 3 months involves
+  	Alice works for 100%
+  	
+  task "Design" from month 4 for 6 months involves
+    Bob works for 100%
+    
+  task "Implementation" from month 7 for 3 months involves
+    Bob works for 50% and
+	Alice works for 50%

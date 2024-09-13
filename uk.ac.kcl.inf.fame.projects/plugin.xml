@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://www.ac.uk/kcl/inf/fame/projects/ProjectsLang"
+			class = "uk.ac.kcl.inf.fame.projects.projectsLang.ProjectsLangPackage"
+			genModel = "model/generated/ProjectsLang.genmodel" />
+	</extension>
+</plugin>
