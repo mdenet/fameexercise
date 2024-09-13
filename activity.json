@@ -115,7 +115,7 @@
 
             "layout": {
                 "area": [
-                    ["panel-turtles", "panel-diagram"],
+                    ["panel-projects", "panel-diagram"],
                     ["panel-etl-rules", "panel-target-model"],
                     ["panel-console", "panel-target-mm"]
                 ]
