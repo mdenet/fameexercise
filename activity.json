@@ -1,0 +1,165 @@
+{
+    "activities": [
+        {
+            "id": "activity-xtext",
+            "title": "Define your language",
+            "icon": "xtext",
+
+            "tools": ["https://ep.mde-network.org/tools/xtext/xtext_tool.json"],
+
+            "panels": [
+                {
+                    "id": "panel-xtext",
+                    "name": "Xtext Grammar",
+                    "ref": "xtext-grammar",
+                    "file": "uk.ac.kcl.inf.fame.projects/src/uk/ac/kcl/inf/fame/projects/ProjectsLang.xtext",
+                    "editorPanel": "panel-projects",
+                    "editorActivity": "activity-editor"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+            ],
+
+            "layout": {
+                "area": [
+                    ["panel-xtext"],
+                    ["panel-console"]
+                ]
+            },
+
+            "actions": [
+                {
+                    "source": "panel-xtext",
+                    "sourceButton": "action-button",
+
+                    "parameters": {
+                        "languageName": "uk.ac.kcl.inf.fame.projects.ProjectsLang",
+                        "baseName": "uk.ac.kcl.inf.fame.projects",
+                        "extension": "projects",
+                        "grammar": "panel-xtext"
+                    },
+
+                    "output": "panel-console"
+                }
+            ]
+        },
+        {
+            "id": "activity-editor",
+            "title": "Try out your language",
+            "icon": "xtext",
+
+            "tools": ["{{ID-panel-projects}}/editor_tool.json", 
+                      "https://ep.mde-network.org/tools/emf/emf_tool.json",
+                      "https://ep.mde-network.org/tools/emfatic/emfatic_tool.json",
+                      "https://ep.mde-network.org/tools/epsilon/tools"],
+
+            "panels": [
+                {
+                    "id": "panel-projects",
+                    "name": "Try out your language here",
+                    "ref": "xtext-editor",
+                    "file": "projectsTest/src/test.projects",
+                    "extension": "projects",
+                    "buttons": [
+                        {
+                            "ref": "to-diagram-button"
+                        }
+                    ]
+                },
+                {
+                    "id": "panel-diagram",
+                    "name": "Model/Metamodel Diagram",
+                    "ref": "emfgraph",
+                    "buttons": [
+                        {
+                            "id": "button-generate-mm-diagram",
+                            "actionfunction": "function-ecoretodiagram",
+                            "hint": "Show meta-model diagram",
+                            "icon": "diagram-generate"                            
+                        }
+                    ]
+                },
+                {
+                    "id": "panel-mm",
+                    "name": "Ecore text format",
+                    "ref": "ecore",
+                    "file": "{{ID-panel-projects}}/xtext-resources/generated/meta-model.ecore"
+                },
+                {
+                    "id": "panel-etl-rules",
+                    "name": "Transformation (ETL)",
+                    "ref": "etl",
+                    "file": "projectsTest/src/to_deliverables.etl"
+                },
+                {
+                    "id": "panel-target-model",
+                    "name": "Target Model",
+                    "ref": "emfgraph"
+                },
+                {
+                    "id": "panel-target-mm",
+                    "name": "Target Metamodel",
+                    "ref": "emfatic",
+                    "file": "projectsTest/src/deliverables.emf"
+                },
+                {
+                    "id": "panel-console",
+                    "name": "Console",
+                    "ref": "console"
+                }
+
+            ],
+
+            "layout": {
+                "area": [
+                    ["panel-turtles", "panel-diagram"],
+                    ["panel-etl-rules", "panel-target-model"],
+                    ["panel-console", "panel-target-mm"]
+                ]
+            },
+
+            "actions": [
+                {
+                    "source": "panel-diagram",
+                    "sourceButton": "button-generate-mm-diagram",
+
+                    "parameters": {
+                        "language": "generated",
+                        "emfatic": "panel-mm"
+                    },
+
+                    "output": "panel-diagram"
+                },
+                {
+                    "source": "panel-projects",
+                    "sourceButton": "to-diagram-button",
+
+                    "parameters": {
+                        "input": "panel-projects",
+                        "language": "xtext-generated"
+                    },
+
+                    "output": "panel-diagram"
+
+                },
+                {
+                    "source": "panel-etl-rules",
+                    "sourceButton": "action-button",
+
+                    "parameters": {
+                        "program": "panel-etl-rules",
+                        "xmi": "panel-projects",
+                        "emfatic": "panel-mm",
+                        "secondEmfatic": "panel-target-mm"
+                    },
+
+                    "output": "panel-target-model",
+                    "outputConsole": "panel-console"
+                }
+            ]
+        }
+    ]
+}
