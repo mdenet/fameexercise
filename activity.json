@@ -24,7 +24,8 @@
                 {
                     "id": "panel-generator",
                     "name": "Xtext generator",
-                    "ref": "xuk.ac.kcl.inf.fame.projects/src/uk/ac/kcl/inf/fame/projects/generator/ProjectsLangGenerator.xtend"
+                    "ref": "xtext-generator",
+                    "file": "uk.ac.kcl.inf.fame.projects/src/uk/ac/kcl/inf/fame/projects/generator/ProjectsLangGenerator.xtend"
                 }
             ],
 
