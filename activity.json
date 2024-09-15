@@ -20,12 +20,17 @@
                     "id": "panel-console",
                     "name": "Console",
                     "ref": "console"
+                },
+                {
+                    "id": "panel-generator",
+                    "name": "Xtext generator",
+                    "ref": "xuk.ac.kcl.inf.fame.projects/src/uk/ac/kcl/inf/fame/projects/generator/ProjectsLangGenerator.xtend"
                 }
             ],
 
             "layout": {
                 "area": [
-                    ["panel-xtext"],
+                    ["panel-xtext", "panel-generator"],
                     ["panel-console"]
                 ]
             },
@@ -39,7 +44,8 @@
                         "languageName": "uk.ac.kcl.inf.fame.projects.ProjectsLang",
                         "baseName": "uk.ac.kcl.inf.fame.projects",
                         "extension": "projects",
-                        "grammar": "panel-xtext"
+                        "grammar": "panel-xtext",
+                        "generator": "panel-generator"
                     },
 
                     "output": "panel-console"
