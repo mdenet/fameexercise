@@ -39,8 +39,7 @@
                         "languageName": "uk.ac.kcl.inf.fame.projects.ProjectsLang",
                         "baseName": "uk.ac.kcl.inf.fame.projects.foo",
                         "extension": "projects",
-                        "grammar": "panel-xtext",
-                        "generator": "panel-generator"
+                        "grammar": "panel-xtext"
                     },
 
                     "output": "panel-console"
