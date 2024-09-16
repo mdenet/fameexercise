@@ -31,7 +31,7 @@
 
             "layout": {
                 "area": [
-                    ["panel-xtext", "panel-generator"],
+                    ["panel-xtext"],
                     ["panel-console"]
                 ]
             },
