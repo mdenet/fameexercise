@@ -10,6 +10,7 @@ class Deliverable {
 	attr String title;
 	attr int due;
 	ref Person lead;
+	attr String authors;
 }
 
 class Person {
