@@ -4,11 +4,14 @@ This repository has been set up for an exercise used during the [1st Internation
 
 ## Getting started
 
-You can see this repository, so you have already managed to get through the first step of the activity: to get hold of your own repository. Before you can take the next step, wait and refresh this page until you can see the message below. This indicates that Github has correctly modified this description and that all links provided below have been customised for your personal use.
+You can see this repository, so you have already managed to get through the first step of the activity: to get hold of your own repository. Before you can take the next step, we need to take one more preparation step. This would normally run automatically, but due to a recent bug in Github Classroom, you will need to do a bit of work yourself:
 
+1. Open [update-private-repo-link.yml](.github/workflows/update-private-repo-link.yml) and click on the edit button in the top right corner -- ![alt text](images/pen_icon.PNG).
+2. Add a space at the top of the file, then remove that space again. This means the file remains unchanged, but you have now enabled the "Commit" button.
+3. Click the "Commit" button to save the file into your repository. Accept the standard commit message and commit directly to `main`. This will trick Github into refreshing its caches and noticing the workflow defined in this file.
+4. Got to the `Actions` tab, then click on `Update privaterepo in README` in the left-hand side menu. Run the workflow from the `Run workflow` dropdown on the right-hand side.
+5. Return to the main page for the repository. Wait and refresh this page until you can see the message below. This indicates that Github has correctly modified this description and that all links provided below have been customised for your personal use.
 ![Github message on successful preparation of the repository](images/readme_rewrite_success.PNG)
-
-If this message doesn't appear, the rewrite action has failed to trigger. You can manually trigger it. Speak to Steffen to find out how.
 
 ## Exercises
 
